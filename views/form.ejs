@@ -1,0 +1,24 @@
+<% const inputInfo = 
+[
+    {
+        id: "nameInput",
+        label: "Name",
+        type: "text",
+        name: "name",
+    },
+    {
+        id: "messageInput",
+        label: "Message",
+        type: "text",
+        name: "message",
+    }
+] %>
+
+<div>
+    <h2>Add a new Message</h2>
+    <form method="POST" action="/new">
+        <%- include("input", inputInfo[0]) %>
+        <%- include("input", inputInfo[1]) %>
+        <button type="submit">Add</button>
+    </form>
+</div>
