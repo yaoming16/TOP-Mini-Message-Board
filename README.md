@@ -6,6 +6,8 @@ A simple message board built with Express and EJS where users can post messages 
 
 - [View Live Page](https://mini-message-board-xpfr.onrender.com)
 
+Note: This app is hosted on Render free tier. It may take ~30 seconds or more to wake up.
+
 ## Tech Stack
 
 - Node.js
