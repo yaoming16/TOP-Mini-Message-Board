@@ -4,7 +4,7 @@ A simple message board built with Express and EJS where users can post messages 
 
 ## Live Demo
 
-- [View Live Page](your-live-page-url-here)
+- [View Live Page](https://mini-message-board-xpfr.onrender.com)
 
 ## Tech Stack
 
