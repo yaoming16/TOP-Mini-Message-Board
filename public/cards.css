@@ -1,0 +1,82 @@
+/* Cards */
+.card-ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0;
+    margin-bottom: 4rem;
+}
+
+
+.card {
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 1rem auto;
+    box-shadow: var(--shadow-soft);
+    max-width: 500px;
+    list-style: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.card-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: var(--text-primary);
+    cursor: pointer;
+    position: relative;
+}
+
+.expand-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.card-link h3 {
+    margin: 0;
+    color: var(--text-primary);
+    transition: color 0.2s ease;
+}
+
+.card-link p {
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.card:hover .card-link h3 {
+    color: var(--accent);
+}
+
+.card:hover .expand-icon {
+    color: var(--accent);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.card a {
+    text-decoration: none;
+    color: var(--text-primary);
+}
+
+.card:hover {
+    box-shadow: var(--shadow-elevated);
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}

@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mini Message Board</title>
-  </head>
-  <body>
-    <ul>
-      <% messages.forEach((message) => { %>
-        <li>
-          <p><%= message.user %></p>
-          <p><%= message.text %></p>
-          <p><%= message.added %></p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/cards.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Mini Message Board</title>
+</head>
+
+<body>
+  <%- include("nav") %>
+  <main>
+    <h1>Mini Message Board</h1>
+    <ul class="cards-ul">
+      <% messages.forEach((message)=> { %>
+        <li class="card">
+          <a href="/<%= message.id %>/card" class="card-link">
+            <svg class="expand-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M14 10L21 3M21 3H16.5M21 3V7.5M10 14L3 21M3 21H7.5M3 21L3 16.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <h3>
+              <%= message.user %>
+            </h3>
+            <p>
+              <%= message.text %>
+            </p>
+            <p class="date">
+              <%= Intl.DateTimeFormat().format(message.added) %>
+            </p>
+          </a>
         </li>
-      <%}) %>
+        <%}) %>
     </ul>
-  </body>
+
+  </main>
+  <%- include("footer") %>
+</body>
+
 </html>

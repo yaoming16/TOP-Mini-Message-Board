@@ -6,19 +6,33 @@
         type: "text",
         name: "name",
     },
-    {
-        id: "messageInput",
-        label: "Message",
-        type: "text",
-        name: "message",
-    }
 ] %>
 
-<div>
-    <h2>Add a new Message</h2>
-    <form method="POST" action="/new">
-        <%- include("input", inputInfo[0]) %>
-        <%- include("input", inputInfo[1]) %>
-        <button type="submit">Add</button>
-    </form>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/form.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <title>Mini Message Board</title>
+</head>
+<body>
+    <%- include("nav") %>
+    <main>
+        <h1>Add a new Message</h1>
+        <form method="POST" action="/new">
+            <%- include("input", inputInfo[0]) %>
+            <div class="input-div">
+                <label for="messageInput">Message</label>
+                <textarea id="messageInput" name="message"></textarea>
+            </div>
+            <button type="submit">Add</button>
+        </form>
+    </main>
+    <%- include("footer") %>
+</body>
+</html>
