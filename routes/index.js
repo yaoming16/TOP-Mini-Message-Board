@@ -40,7 +40,6 @@ indexRouter.post("/new", (req, res) => {
 indexRouter.get("/:id/card", (req, res) => {
   const idToFind = req.params.id;
   const info = messages.find((message) => message.id === idToFind);
-  console.log(info);
   res.render("card", {message : info})
 })
 

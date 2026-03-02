@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("node:path");
+require('dotenv').config();
 const indexRouter = require("./routes/index");
 
 const app = express();
@@ -14,11 +15,11 @@ app.use(express.static(assetPath));
 
 app.use("/", indexRouter);
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, (error) => {
   if (error) {
     throw error;
   }
-  console.log("server started");
+  console.log("server started on port " + PORT);
 });
